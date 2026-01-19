@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Lavoro dignitoso e professioni ICT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background: #1e88e5;
+            color: #fff;
+            padding: 20px 10%;
+        }
+        header h1 {
+            margin: 0 0 5px 0;
+        }
+        header p {
+            margin: 0;
+        }
+        /* MENU */
+        nav {
+            background: #1565c0;
+            padding: 0 10%;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav li {
+            position: relative;
+        }
+        nav > ul > li {
+            margin-right: 20px;
+        }
+        nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background: #0d47a1;
+        }
+        /* SOTTOMENU */
+        nav li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #1565c0;
+            min-width: 260px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+        nav li:hover > ul {
+            display: block;
+        }
+        nav li ul li {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px 10%;
+        }
+        section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 4px rgba(0,0,0,0.1);
+            display: none; /* di default nascoste, tranne home */
+        }
+        section.active {
+            display: block;
+        }
+        h2 {
+            color: #1565c0;
+            margin-top: 0;
+        }
+        h3 {
+            color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #eee;
+            font-size: 0.9rem;
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(id);
+            if (target) {
+                target.classList.add('active');
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', function () {
+            // Mostra la home all'avvio
+            showSection('home');
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Lavoro dignitoso e professioni ICT nel settore reti</h1>
+    <p>Obiettivo 8 Agenda 2030, digitalizzazione e professioni delle reti</p>
+</header>
+
+<nav>
+    <ul>
+        <li>
+            <a onclick="showSection('home')">Home</a>
+        </li>
+        <li>
+            <a>Lavoro dignitoso</a>
+            <ul>
+                <li><a onclick="showSection('lavoro-dignitoso')">Lavoro dignitoso: Agenda 2030</a></li>
+                <li><a onclick="showSection('digitalizzazione')">Come influisce la digitalizzazione sulla crescita economica?</a></li>
+            </ul>
+        </li>
+        <li>
+            <a>Professioni ICT</a>
+            <ul>
+                <li><a onclick="showSection('network-administrator')">Network Administrator</a></li>
+                <li><a onclick="showSection('system-administrator')">System Administrator</a></li>
+                <li><a onclick="showSection('network-engineer')">Network Engineer</a></li>
+                <li><a onclick="showSection('cybersecurity-analyst')">Cybersecurity Analyst</a></li>
+                <li><a onclick="showSection('tecnico-reti')">Tecnico reti e infrastrutture</a></li>
+            </ul>
+        </li>
+        <li>
+            <a>Fonti e analisi di mercato</a>
+            <ul>
+                <li><a onclick="showSection('fonti-mercato')">Fonti consultate e analisi del mercato del lavoro</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<main>
+    <!-- HOME -->
+    <section id="home" class="active">
+        <h2>Introduzione agli argomenti</h2>
+        <p align="center">In questo sito esploriamo il lavoro dignitoso dell'Obiettivo 8 Agenda 2030, che promuove crescita economica sostenibile e condizioni di lavoro sicure e retribuite adeguatamente per tutti.</p>
+        <p align="center">Analizziamo come la digitalizzazione stimoli la crescita economica attraverso nuove opportunità ICT, reti affidabili e servizi innovativi come cloud e cybersecurity.</p>
+        <p align="center">Presentiamo cinque professioni chiave del settore reti (Network Administrator, System Administrator, Network Engineer, Cybersecurity Analyst, Tecnico reti e infrastrutture), con le loro competenze e prospettive lavorative.</p>
+        <p align="center">Documentiamo le fonti consultate (AgID, Indeed/LinkedIn, report settoriali) che confermano la domanda crescente per queste figure nel mercato italiano.</p>
+        <p style="text-align: center; font-style: italic; color: #666; margin-top: 20px;">Clicca sul menu per approfondire ogni argomento.</p>
+    </section>
+
+    <!-- LAVORO DIGNITOSO -->
+    <section id="lavoro-dignitoso">
+        <h2>Cosa significa “lavoro dignitoso” secondo l’Agenda 2030?</h2>
+        <p>
+            L’Obiettivo 8 dell’Agenda 2030 chiede di promuovere una crescita economica duratura,
+            inclusiva e sostenibile, un’occupazione piena e produttiva e un lavoro dignitoso per tutti,
+            senza discriminazioni.
+        </p>
+        <p>
+            Per le Nazioni Unite, il lavoro è dignitoso quando garantisce diritti, sicurezza,
+            una retribuzione adeguata, tutele sociali e possibilità di sviluppo personale e professionale
+            per ogni lavoratore e lavoratrice.
+        </p>
+        <p>
+            Il lavoro dignitoso esclude il lavoro minorile, il lavoro forzato, lo sfruttamento e la mancanza di
+            sicurezza, e richiede condizioni di lavoro sicure, rispetto delle norme e parità di opportunità
+            tra donne, uomini e giovani.
+        </p>
+        <p>
+            Questo obiettivo è collegato anche alla riduzione della povertà e alla costruzione di un’economia
+            sostenibile che non si basa sull’abuso delle persone e dell’ambiente.
+        </p>
+    </section>
+
+    <!-- DIGITALIZZAZIONE -->
+    <section id="digitalizzazione">
+        <h2>Come influisce la digitalizzazione sulla crescita economica?</h2>
+        <p>
+            La digitalizzazione è uno dei motori principali della crescita economica, perché aumenta la produttività
+            delle imprese, crea nuovi servizi e nuovi posti di lavoro nel settore ICT e in tutti i settori che usano
+            le tecnologie digitali.
+        </p>
+        <p>
+            Investimenti in reti, cloud, intelligenza artificiale e cybersecurity generano innovazione, migliorano
+            l’organizzazione del lavoro e rendono le aziende più competitive a livello nazionale e internazionale.
+        </p>
+        <p>
+            In molti paesi, la crescita del mercato digitale e dei servizi ICT è superiore alla crescita del PIL, e questo
+            mostra quanto le tecnologie digitali contribuiscano allo sviluppo economico e all’occupazione.
+        </p>
+        <p>
+            Tuttavia, per sfruttare davvero il potenziale della trasformazione digitale servono competenze tecniche,
+            formazione continua e infrastrutture di rete affidabili, altrimenti una parte della popolazione e delle
+            imprese rischia di restare indietro.
+        </p>
+    </section>
+
+    <!-- NETWORK ADMINISTRATOR -->
+    <section id="network-administrator">
+        <h2>Network Administrator</h2>
+
+        <h3>COSA FA?</h3>
+        <p>
+            Il Network Administrator gestisce, controlla e mantiene le reti informatiche di un’organizzazione,
+            assicurando che la connessione tra dispositivi, server e servizi sia stabile e sicura.
+        </p>
+        <p>
+            Si occupa di configurare router, switch e altri apparati di rete, di monitorare il traffico e di
+            intervenire in caso di guasti o problemi di prestazioni.
+
+
+        </p>
+
+        <h3>COMPETENZE NECESSARIE</h3>
+        <p>
+            Gli servono solide conoscenze di protocolli di rete, indirizzamento IP, routing e switching, sistemi
+            operativi di rete e principi base di cybersecurity.
+        </p>
+        <p>
+            Sono importanti anche capacità di problem solving, attenzione ai dettagli, lavoro in team e aggiornamento
+            continuo sulle nuove tecnologie.
+
+
+        </p>
+
+        <h3>STRUMENTI UTILIZZATI</h3>
+        <p>
+            Utilizza router, switch, firewall, sistemi di monitoraggio della rete, console di gestione dei dispositivi
+            e strumenti di diagnostica come ping, traceroute e analizzatori di traffico.
+        </p>
+        <p>
+            Può usare anche piattaforme di gestione centralizzata e servizi cloud per controllare reti distribuite su
+            più sedi.
+
+
+        </p>
+
+        <h3>PROSPETTIVE LAVORATIVE</h3>
+        <p>
+            Il Network Administrator è richiesto in aziende di ogni settore, pubbliche amministrazioni, provider
+            di servizi Internet e data center, perché tutte le organizzazioni dipendono da reti affidabili.
+        </p>
+        <p>
+            La domanda di questi profili è in crescita grazie all’espansione delle infrastrutture digitali e dei
+            servizi online, con buone prospettive di carriera verso ruoli di Network Engineer o responsabile IT.
+        </p>
+    </section>
+
+    <!-- SYSTEM ADMINISTRATOR -->
+    <section id="system-administrator">
+        <h2>System Administrator</h2>
+
+        <h3>COSA FA?</h3>
+        <p>
+            Il System Administrator installa, configura e gestisce server, sistemi operativi, servizi di rete
+            (come file server, servizi di autenticazione, posta, backup) e si assicura che siano sempre disponibili
+            e aggiornati.
+        </p>
+        <p>
+            Si occupa di utenti, permessi, sicurezza di base dei sistemi e risoluzione dei problemi legati alle
+            macchine fisiche o virtuali.
+
+
+        </p>
+
+        <h3>COMPETENZE NECESSARIE</h3>
+        <p>
+            Deve conoscere bene sistemi operativi server (ad esempio Linux e Windows Server), virtualizzazione,
+            gestione di utenti e gruppi, backup e ripristino, oltre ai concetti di sicurezza dei sistemi.
+        </p>
+        <p>
+            Servono capacità di analisi, gestione dello stress, organizzazione del lavoro e collaborazione con altri
+            tecnici di rete e sviluppo.
+
+
+        </p>
+
+        <h3>STRUMENTI UTILIZZATI</h3>
+        <p>
+            Utilizza console di amministrazione dei sistemi operativi, strumenti di virtualizzazione, software di
+            monitoraggio server, piattaforme di backup e pannelli di gestione dei servizi di rete.
+        </p>
+        <p>
+            Sempre più spesso usa anche strumenti cloud per gestire macchine virtuali, servizi applicativi e risorse
+            distribuite su più datacenter.
+
+
+        </p>
+
+        <h3>PROSPETTIVE LAVORATIVE</h3>
+        <p>
+            Il System Administrator può lavorare in aziende di medie e grandi dimensioni, provider di servizi IT,
+            società di consulenza, data center e organizzazioni pubbliche.
+        </p>
+        <p>
+            Le prospettive sono buone perché ogni realtà digitale ha bisogno di sistemi stabili e sicuri, e il ruolo
+            può evolvere verso posizioni di IT manager, cloud specialist o DevOps engineer.
+        </p>
+    </section>
+
+    <!-- NETWORK ENGINEER -->
+    <section id="network-engineer">
+        <h2>Network Engineer</h2>
+
+        <h3>COSA FA?</h3>
+        <p>
+            Il Network Engineer progetta, implementa e ottimizza le reti di comunicazione, definendo l’architettura,
+            la segmentazione e le soluzioni tecniche più adatte per garantire prestazioni e sicurezza.
+        </p>
+        <p>
+            Si occupa di configurazioni avanzate, di integrazione tra reti diverse e di soluzioni per connettere sedi,
+            data center e servizi cloud.
+
+
+        </p>
+
+        <h3>COMPETENZE NECESSARIE</h3>
+        <p>
+            Gli servono competenze approfondite di progettazione di reti LAN, WAN e reti wireless, protocolli avanzati
+            di routing e switching, sicurezza di rete e talvolta competenze di base di system administration.
+        </p>
+        <p>
+            Sono fondamentali capacità di analisi, pianificazione, gestione di progetti e collaborazione con altre
+            figure tecniche e con il management.
+
+
+        </p>
+
+        <h3>STRUMENTI UTILIZZATI</h3>
+        <p>
+            Utilizza router, switch di fascia enterprise, firewall avanzati, strumenti di progettazione e simulazione
+            di rete e piattaforme di monitoraggio evolute.
+        </p>
+        <p>
+            Lavora spesso con tecnologie di rete software‑defined e servizi di connettività cloud per integrare
+            infrastrutture locali e remote.
+
+
+        </p>
+
+        <h3>PROSPETTIVE LAVORATIVE</h3>
+        <p>
+            Il Network Engineer trova opportunità in grandi aziende, operatori di telecomunicazioni, system integrator
+            e fornitori di servizi cloud, dove le reti sono complesse e strategiche.
+        </p>
+        <p>
+            Con l’espansione di cloud, IoT e servizi digitali avanzati, questa figura ha prospettive di crescita verso
+            ruoli di architetto di rete o responsabile delle infrastrutture ICT.
+        </p>
+    </section>
+
+    <!-- CYBERSECURITY ANALYST -->
+    <section id="cybersecurity-analyst">
+        <h2>Cybersecurity Analyst</h2>
+
+        <h3>COSA FA?</h3>
+        <p>
+            Il Cybersecurity Analyst analizza i sistemi e le reti per individuare vulnerabilità, monitora gli eventi
+            di sicurezza e risponde agli incidenti informatici per proteggere dati e servizi.
+        </p>
+        <p>
+            Gestisce log, allarmi e report, partecipa alla definizione di politiche di sicurezza e alle attività di
+            formazione degli utenti.
+
+
+        </p>
+
+        <h3>COMPETENZE NECESSARIE</h3>
+        <p>
+            Deve conoscere reti e protocolli, sistemi operativi, crittografia di base, tecniche di attacco e difesa,
+            oltre a normative e buone pratiche di sicurezza.
+        </p>
+        <p>
+            Sono richieste capacità di analisi, attenzione ai dettagli, rapidità nel reagire agli incidenti e capacità
+            di comunicare in modo chiaro con colleghi non tecnici.
+
+
+        </p>
+
+        <h3>STRUMENTI UTILIZZATI</h3>
+        <p>
+            Utilizza sistemi di monitoraggio della sicurezza (SIEM), firewall, IDS/IPS, scanner di vulnerabilità,
+            antivirus avanzati e piattaforme di gestione degli incidenti.
+        </p>
+        <p>
+            Spesso lavora anche con strumenti di analisi forense, sandbox e soluzioni di sicurezza cloud per proteggere
+            infrastrutture ibride.
+
+
+        </p>
+
+        <h3>PROSPETTIVE LAVORATIVE</h3>
+        <p>
+            La domanda di esperti di cybersecurity è in forte crescita, perché la digitalizzazione aumenta il numero
+            e la complessità delle minacce informatiche.
+        </p>
+        <p>
+            Il Cybersecurity Analyst può lavorare in aziende, enti pubblici, banche, provider di servizi ICT e società
+            specializzate in sicurezza, con possibilità di evolvere verso ruoli di security manager o consulente.
+
+
+        </p>
+    </section>
+
+    <!-- TECNICO RETI -->
+    <section id="tecnico-reti">
+        <h2>Tecnico reti e infrastrutture</h2>
+
+        <h3>COSA FA?</h3>
+        <p>
+            Il Tecnico reti e infrastrutture installa, configura e manutiene le componenti fisiche e logiche delle
+            reti, come cablaggi, apparati di rete, punti di accesso Wi‑Fi e collegamenti tra sedi.
+        </p>
+        <p>
+            Interviene sul campo per attivare nuove linee, risolvere guasti e supportare utenti e colleghi nella
+            gestione quotidiana dell’infrastruttura.
+
+
+        </p>
+
+        <h3>COMPETENZE NECESSARIE</h3>
+        <p>
+            Servono conoscenze pratiche di cablaggio strutturato, standard Ethernet, configurazione base di router
+            e switch, reti wireless e principi di sicurezza.
+        </p>
+        <p>
+            Sono importanti manualità, capacità di problem solving operativo, lavoro in team e disponibilità a
+            spostarsi presso diversi siti del cliente o dell’azienda.
+
+
+        </p>
+
+        <h3>STRUMENTI UTILIZZATI</h3>
+        <p>
+            Utilizza strumenti di misura e test (come tester di cavi e strumenti per la verifica del segnale),
+            software di configurazione degli apparati, laptop con strumenti di diagnostica di rete e talvolta
+            applicazioni mobili dedicate.
+        </p>
+        <p>
+            Può usare anche sistemi di gestione remota per controllare e aggiornare apparati di rete distribuiti.
+
+
+        </p>
+
+        <h3>PROSPETTIVE LAVORATIVE</h3>
+        <p>
+            Il Tecnico reti e infrastrutture trova lavoro presso aziende IT, provider di telecomunicazioni,
+            installatori di reti, system integrator e reparti IT interni.
+        </p>
+        <p>
+            La diffusione di reti ad alta velocità, Wi‑Fi avanzati e connessioni sicure fa crescere la richiesta
+            di tecnici specializzati, con possibilità di crescita verso ruoli di Network Administrator o Network Engineer.
+
+
+        </p>
+    </section>
+
+    <!-- FONTI E MERCATO -->
+    <section id="fonti-mercato">
+        <h2>Fonti consultate e analisi del mercato del lavoro</h2>
+
+        <h3>Fonti istituzionali e competenze digitali</h3>
+        <p>
+            Nel nostro lavoro abbiamo consultato siti istituzionali che parlano di Agenda 2030, lavoro dignitoso e
+            competenze digitali, in particolare le pagine dedicate alle competenze digitali e alle nuove professionalità
+            ICT nelle pubbliche amministrazioni.
+        </p>
+        <p>
+            Dallo studio di queste fonti emerge che è sempre più necessario sviluppare competenze digitali specialistiche
+            e profili in grado di progettare, gestire e proteggere le infrastrutture digitali, come gli amministratori di
+            rete e i professionisti della sicurezza.
+        </p>
+        <p>
+            Questa analisi conferma la centralità delle professioni che abbiamo scelto di approfondire (Network Administrator,
+            System Administrator, Network Engineer, Cybersecurity Analyst e Tecnico reti e infrastrutture) per sostenere
+            la trasformazione digitale e una crescita economica sostenibile.
+        </p>
+
+        <h3>Annunci di lavoro (Indeed / LinkedIn)</h3>
+        <p>
+            Per capire meglio la realtà del mercato del lavoro, abbiamo cercato annunci reali su portali come Indeed e
+            LinkedIn, concentrandoci sulle offerte per ruoli di rete e sicurezza in Italia.
+        </p>
+        <p>
+            Dalla nostra ricerca risulta che ci sono numerose posizioni aperte per Network Administrator, Network/System
+            Administrator e figure simili, spesso in aree ad alta concentrazione di imprese e servizi, con richieste
+            di competenze su gestione delle infrastrutture, configurazione di router, switch e firewall e supporto agli utenti.
+        </p>
+        <p>
+            Analizzando gli annunci legati alla cybersecurity, abbiamo trovato molte opportunità per Cyber Security Analyst
+            e profili collegati, segno di una forte crescita della domanda in questo settore.
+        </p>
+        <p>
+            In questi annunci vengono spesso richieste competenze su monitoraggio degli incidenti, utilizzo di strumenti
+            di sicurezza avanzati e capacità di contribuire alla definizione e al rispetto delle politiche di cybersecurity aziendale.
+        </p>
+
+        <h3>Articoli e report di settore</h3>
+        <p>
+            Per completare il quadro, abbiamo consultato articoli e report che analizzano l’andamento degli investimenti
+            nel digitale e l’evoluzione del mercato ICT in Italia.
+        </p>
+        <p>
+            Da queste letture emerge che gli investimenti in reti, cloud, intelligenza artificiale e sicurezza informatica
+            sono in aumento e rappresentano un fattore chiave per la competitività delle imprese e per la crescita economica complessiva.
+        </p>
+        <p>
+            I report sottolineano anche che, senza professionisti qualificati come amministratori di rete, sistemisti,
+            ingegneri di rete e analisti di cybersecurity, la trasformazione digitale rischia di essere rallentata e di
+            non tradursi pienamente in nuove opportunità di lavoro dignitoso.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Progetto UDA Educazione Civica – Sistemi e Reti - Jacopo Catanzaro e Lorenzo Pennetta</p>
+</footer>
+
+</body>
+</html>
